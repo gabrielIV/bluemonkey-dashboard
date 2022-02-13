@@ -1,0 +1,105 @@
+$theme-colors: (
+  'primary': #5d54ac,
+  'secondary': #5a84e3,
+  // "light": #c0c0c0,
+  'dark': #151515,
+  'danger': #f44336,
+);
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Roboto:wght@700;900&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+
+$primary: #5d54ac;
+$secondary: #5a84e3;
+// $light: #c0c0c0;
+$dark: #151515;
+$danger: #f44336;
+
+body {
+  font-family: 'Nunito', sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sidebarToggle {
+  position: absolute;
+  bottom: 0px;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: aliceblue;
+
+  .side-menu {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    width: 225px;
+  }
+
+  .app-main {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    max-width: calc(100vw - 225px);
+  }
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 1rem;
+  width: 14rem;
+  position: relative;
+  color: $dark !important;
+  font-weight: bold;
+
+  &::before {
+    content: '';
+    transition: all 0.3s;
+    background-color: rgba($secondary, 0.3);
+    height: calc(100% - 10px);
+    width: calc(100% - 5px);
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    opacity: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &.active::before {
+    opacity: 1;
+  }
+
+  & span {
+    /* font-size: 18px !important; */
+    font-weight: bold;
+  }
+  &.active {
+    color: $primary !important;
+  }
+  &.active .link-text {
+    color: $primary !important;
+  }
+}
+
+.main-title {
+  // font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  color: $primary;
+}

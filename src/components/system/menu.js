@@ -1,30 +1,26 @@
 import React, { Component } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Menu extends Component {
   state = { active: null };
   render() {
     return (
       <div className='side-menu border-end'>
-        <div className='side-nav'>
+        <div className='side-nav mt-5'>
           {this.props.menu.map((d, i) => (
-            <Link
-              className={
-                'nav-link ' + (this.state.active === d.link && 'active')
-              }
+            <NavLink
+              className={({ isActive }) => 'nav-link ' + (isActive && 'active')}
               to={d.link}
               key={i}>
               <div className='me-3'>{d.icon}</div> <div> {d.name}</div>
-            </Link>
+            </NavLink>
           ))}
         </div>
       </div>
     );
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(useLocation());
-  }
+  componentDidUpdate(prevProps) {}
 }
 
 export default Menu;

@@ -7,20 +7,30 @@ class Home extends Component {
   state = {};
   render() {
     return (
-      <div className='text-center'>
-        <h1 className='my-5 main-title'>bluemonkey</h1>
+      <div className=''>
+        <div className='row'>
+          <div className='col-md-6'>
+            <div className='main-title-parent mx-auto'>
+              <div className='monkey'>
+                <Lottie
+                  options={{
+                    loop: true,
+                    autoplay: true,
+                    animationData: monkeyLottie,
+                    rendererSettings: {
+                      preserveAspectRatio: 'xMidYMid slice',
+                    },
+                  }}
+                  height={250}
+                  width={250}></Lottie>
+              </div>
 
-        <Lottie
-          options={{
-            loop: true,
-            autoplay: true,
-            animationData: monkeyLottie,
-            rendererSettings: {
-              preserveAspectRatio: 'xMidYMid slice',
-            },
-          }}
-          height={250}
-          width={250}></Lottie>
+              <div className='my-5 main-title'>bluemonkey</div>
+            </div>
+          </div>
+
+          <div className='col-md-6'></div>
+        </div>
       </div>
     );
   }

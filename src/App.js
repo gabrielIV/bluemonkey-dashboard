@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import DasboardEditor from './editor';
+import DashboardEditor from './editor';
 import './css/style.scss';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       {/* initialize dashboard editor route */}
       <Router basename='god_mode'>
-        <DasboardEditor></DasboardEditor>
+        <DashboardEditor></DashboardEditor>
       </Router>
     </div>
   );
